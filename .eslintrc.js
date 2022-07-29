@@ -1,10 +1,10 @@
 module.exports = {
-  parser: 'babel-eslint',
+  // parser: 'babel-eslint',
   plugins: ['react', 'prettier'],
   extends: ['airbnb', 'prettier'],
   rules: {
     'no-console': ['error', { allow: ['warn', 'error'] }],
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+    // 'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/no-unsafe': 'error',
     'prettier/prettier': ['error'],
   },

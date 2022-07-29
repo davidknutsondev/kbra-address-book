@@ -1,0 +1,43 @@
+{
+  "people": [
+    {
+      "id": 0,
+      "firstName": "David",
+      "lastName": "Knutson",
+      "location": {
+        "street": "8 Delotto",
+        "city": "Trenton",
+        "zipcode": "08619",
+        "state": "New Jersey"
+      },
+      "email": "davidknutson@test.com",
+      "phone": "6098023794"
+    },
+    {
+      "id": 1,
+      "firstName": "Samuel",
+      "lastName": "Knutson",
+      "location": {
+        "street": "10 Delotto Drive",
+        "city": "Trenton",
+        "zipcode": "08629",
+        "state": "New Jersey"
+      },
+      "email": "samuelknutson@test.com",
+      "phone": "6098029121"
+    },
+    {
+      "id": 2,
+      "firstName": "Thomas",
+      "lastName": "Knutson",
+      "location": {
+        "street": "10 Foglesong valley road",
+        "city": "asdfadsf",
+        "zipcode": "08629",
+        "state": "New Jersey"
+      },
+      "email": "thomasknutson@test.com",
+      "phone": "6093100005"
+    }
+  ]
+}
