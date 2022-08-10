@@ -1,14 +1,14 @@
 import React from 'react';
 import { Formik, FormikHelpers } from 'formik';
 import { toast } from 'react-toastify';
+import { faker } from '@faker-js/faker';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FloatingLabel from 'react-bootstrap/esm/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import { schema } from './schema';
-import { ContactInput } from '../../../services/types';
+import { FormValues, schema } from './schema';
 import { useCreateContactMutation } from '../../../services/contacts';
 
 interface Props {
@@ -24,24 +24,24 @@ const CreateContactForm: React.FC<Props> = ({ closeModal, onRefetch }) => {
   const initialValues = {
     firstName: '',
     lastName: '',
+    address: '',
+    email: '',
+    phone: '',
   };
 
-  const handleSubmit = async (
-    values: ContactInput,
-    { setSubmitting }: FormikHelpers<ContactInput>,
-  ) => {
+  const handleSubmit = async (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
     try {
       setSubmitting(true);
-      // const payload = await createContact({
-      //   firstName: values.firstName,
-      //   lastName: values.lastName,
-      //   avatar: faker.internet.avatar(),
-      //   address: values.address,
-      //   email: values.email,
-      //   phone: values.phone,
-      // }).unwrap();
+      const payload = await createContact({
+        firstName: values.firstName,
+        lastName: values.lastName,
+        avatar: faker.internet.avatar(),
+        address: values.address,
+        email: values.email,
+        phone: values.phone,
+      }).unwrap();
 
-      // console.log('PAYLOAD', payload);
+      console.log('PAYLOAD', payload);
 
       // if (payload) {
       if (false) {
@@ -63,10 +63,10 @@ const CreateContactForm: React.FC<Props> = ({ closeModal, onRefetch }) => {
       {({
         handleSubmit,
         handleChange,
-        // handleBlur,
+        handleBlur,
         values,
-        // touched,
-        // isValid,
+        touched,
+        isValid,
         errors,
         isSubmitting,
       }) => (

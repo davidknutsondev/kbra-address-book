@@ -1,5 +1,7 @@
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 import Image from 'react-bootstrap/Image';
-import { Contact } from '../../../services/types';
+import { Contact } from '../../../types';
 
 interface Props {
   contact: Contact;
@@ -9,12 +11,31 @@ const ContactsTableRow: React.FC<Props> = ({ contact }) => {
   return (
     <tr>
       <td>
-        <Image src={contact.avatar} />
+        <Row>
+          <Col>
+            <Image src={contact.avatar} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p>
+              {contact.lastName}, {contact.firstName}
+            </p>
+          </Col>
+        </Row>
       </td>
-      <td>{contact.lastName}</td>
-      <td>{contact.firstName}</td>
-      <td>{contact.email}</td>
-      <td>{contact.phone}</td>
+      <td>
+        <Row>
+          <Col>
+            <p>{contact.email}</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p>{contact.phone}</p>
+          </Col>
+        </Row>
+      </td>
       <td>{contact.address}</td>
     </tr>
   );

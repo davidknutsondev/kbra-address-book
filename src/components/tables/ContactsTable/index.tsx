@@ -1,5 +1,5 @@
 import Table from 'react-bootstrap/Table';
-import { Contacts } from '../../../services/types';
+import { Contacts } from '../../../types';
 import ContactListRow from './ContactsTableRow';
 
 interface Props {
@@ -13,11 +13,8 @@ const ContactsTable: React.FC<Props> = ({ contacts, error, loading }) => {
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>Avatar</th>
-          <th>Last Name</th>
-          <th>First Name</th>
-          <th>Email</th>
-          <th>Phone</th>
+          <th>Name</th>
+          <th>Contact Info.</th>
           <th>Address</th>
         </tr>
       </thead>
