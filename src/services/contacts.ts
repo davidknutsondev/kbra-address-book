@@ -11,10 +11,8 @@ export const contactsApi = createApi({
       query: (id) => `contacts/${id}`,
     }),
     getContacts: build.query<Contacts, { searchInput?: string }>({
-      // query: () => 'contacts',
       query: (arg?) => {
         const { searchInput } = arg;
-        console.log('arg: ', arg);
         return {
           url: 'contacts/',
           params: { searchInput },

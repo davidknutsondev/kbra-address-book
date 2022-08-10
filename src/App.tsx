@@ -1,11 +1,11 @@
 import './App.css';
-import AddressBook from './components/AddressBook';
+import ContactsPage from './components/pages/ContactsPage';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AddressBook />
+        <ContactsPage />
       </header>
     </div>
   );
