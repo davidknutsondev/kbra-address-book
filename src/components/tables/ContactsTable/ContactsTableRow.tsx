@@ -1,11 +1,11 @@
 import Image from 'react-bootstrap/Image';
-import { Contact } from '../services/types';
+import { Contact } from '../../../services/types';
 
 interface Props {
   contact: Contact;
 }
 
-const ContactListRow: React.FC<Props> = ({ contact }) => {
+const ContactsTableRow: React.FC<Props> = ({ contact }) => {
   return (
     <tr>
       <td>
@@ -20,4 +20,4 @@ const ContactListRow: React.FC<Props> = ({ contact }) => {
   );
 };
 
-export default ContactListRow;
+export default ContactsTableRow;

@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
-import { Contacts } from '../services/types';
-import ContactListRow from './ContactListRow';
+import { Contacts } from '../../../services/types';
+import ContactListRow from './ContactsTableRow';
 
 interface Props {
   contacts?: Contacts;
@@ -8,7 +8,7 @@ interface Props {
   loading: boolean;
 }
 
-const ContactList: React.FC<Props> = ({ contacts, error, loading }) => {
+const ContactsTable: React.FC<Props> = ({ contacts, error, loading }) => {
   return (
     <Table striped bordered hover>
       <thead>
@@ -42,4 +42,4 @@ const ContactList: React.FC<Props> = ({ contacts, error, loading }) => {
   );
 };
 
-export default ContactList;
+export default ContactsTable;

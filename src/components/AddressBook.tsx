@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useCreateContactMutation, useGetContactsQuery } from '../services/contacts';
 import CreateContactModal from './modals/CreateContactModal';
-import ContactList from './ContactList';
+import ContactsTable from './tables/ContactsTable';
 
 const AddressBook: React.FC = () => {
   const [show, setShow] = useState(false);
@@ -56,7 +56,7 @@ const AddressBook: React.FC = () => {
           </Col>
         </Row>
         <Row>
-          <ContactList contacts={data} error={error} loading={isLoading} />
+          <ContactsTable contacts={data} error={error} loading={isLoading} />
         </Row>
         <Row>
           <Col>
