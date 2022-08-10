@@ -1,11 +1,11 @@
 import './App.css';
-import AsdfComp from './components/AsdfComp';
+import AddressBook from './components/AddressBook';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AsdfComp />
+        <AddressBook />
       </header>
     </div>
   );
