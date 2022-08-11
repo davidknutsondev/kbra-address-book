@@ -41,8 +41,8 @@ const CreateContactForm: React.FC<Props> = ({ closeModal, onRefetch }) => {
       console.log('PAYLOAD', payload);
 
       if (payload != null && payload !== undefined) {
-        toast.success('Added new contact');
-        setSubmitting(true);
+        toast.success('Create contact');
+        setSubmitting(false);
         closeModal();
         onRefetch();
       } else {
