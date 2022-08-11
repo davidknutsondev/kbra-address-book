@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import { Contacts } from '../../../types';
-import ContactListRow from './ContactsTableRow';
+import ContactsTableRow from './ContactsTableRow';
 
 interface Props {
   contacts?: Contacts;
@@ -20,17 +20,17 @@ const ContactsTable: React.FC<Props> = ({ contacts, error, loading }) => {
       </thead>
       <tbody>
         {error ? (
-          <tr>
+          <tr key={'error-key'}>
             <td>Oh no, there was an error</td>
           </tr>
         ) : loading ? (
-          <tr>
+          <tr key={'loading-key'}>
             <td>Loading contacts...</td>
           </tr>
         ) : contacts ? (
           <>
             {contacts.map((contact) => (
-              <ContactListRow contact={contact} key={contact.id} />
+              <ContactsTableRow contact={contact} key={contact.id} />
             ))}
           </>
         ) : null}

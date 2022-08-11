@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { faker } from '@faker-js/faker';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -51,37 +52,51 @@ const ContactsPage: React.FC = () => {
   };
 
   return (
-    <Container>
-      <Row className="mb-3 mt-3">
-        <Col>
-          <SearchContactsForm onSearch={handleSearch} />
-        </Col>
-        <Col>
-          <Button className="float-end" size="lg" variant="outline-primary" onClick={handleShow}>
-            New Contact
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <ContactsTable contacts={data} error={error} loading={isLoading} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Button
-            className="float-start"
-            size="lg"
-            onClick={handleClick}
-            disabled={createContactLoading}
-          >
-            Generate Contact
-          </Button>
-        </Col>
-      </Row>
-      <CreateContactModal show={show} closeModal={closeModal} onRefetch={handleRefetch} />
-      <ToastContainer />
-    </Container>
+    <>
+      <Container>
+        <Navbar expand="lg" variant="light" bg="light" fixed="top">
+          <Container>
+            <Row className="d-flex mb-3 mt-3">
+              <Col>
+                <SearchContactsForm onSearch={handleSearch} />
+              </Col>
+              <Col>
+                <Button
+                  className="float-end"
+                  size="lg"
+                  variant="outline-primary"
+                  onClick={handleShow}
+                >
+                  New Contact
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </Navbar>
+      </Container>
+
+      <Container>
+        <Row style={{ paddingTop: '96px' }}>
+          <Col>
+            <ContactsTable contacts={data} error={error} loading={isLoading} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button
+              className="float-start"
+              size="lg"
+              onClick={handleClick}
+              disabled={createContactLoading}
+            >
+              Generate Contact
+            </Button>
+          </Col>
+        </Row>
+        <CreateContactModal show={show} closeModal={closeModal} onRefetch={handleRefetch} />
+        <ToastContainer />
+      </Container>
+    </>
   );
 };
 

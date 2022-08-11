@@ -7,10 +7,7 @@ export const schema = Yup.object().shape({
   firstName: Yup.string().required('Required'),
   lastName: Yup.string().required('Required'),
   address: Yup.string().required('Required'),
-  phone: Yup.string().matches(phoneRegExp, 'Phone number is not valid'),
-  // phone: Yup.string()
-  //   .test('len', 'Must be exactly 5 characters', (val) => val?.length === 10)
-  //   .required('Required'),
+  phone: Yup.string().matches(phoneRegExp, 'Phone number is not valid').required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
 });
 
