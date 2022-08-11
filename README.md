@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
+## Initial setup (fresh vm)
+
+0.  Get [node](https://nodejs.org/en/)
+1.  Get yarn `npm install -g yarn`
+2.  Clone the repo `git clone https://github.com/davidknutsondev/kbra-address-book.git && cd kbra-address-book`
+3.  Create a .env file with the REACT_APP_BACKEND_ENDPOINT=yourEndPoint
+4.  Initialize the project `yarn --init`
+5.  Build the project `yarn build`
+6.  Start the server `yarn start`
+
 ## Available Scripts
 
 In the project directory, you can run:
