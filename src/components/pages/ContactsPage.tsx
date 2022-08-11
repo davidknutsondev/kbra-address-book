@@ -43,8 +43,8 @@ const ContactsPage: React.FC = () => {
 
   const handleClick = async () => {
     try {
-      const payload = await createContact(mockInput).unwrap();
-      toast.success('Successs!!!!!');
+      await createContact(mockInput);
+      toast.success('Generated contact!');
       refetch();
     } catch (error) {
       toast.error((error as Error).message);
@@ -56,21 +56,10 @@ const ContactsPage: React.FC = () => {
       <Container>
         <Navbar expand="lg" variant="light" bg="light" fixed="top">
           <Container>
-            <Row className="d-flex mb-3 mt-3">
-              <Col>
-                <SearchContactsForm onSearch={handleSearch} />
-              </Col>
-              <Col>
-                <Button
-                  className="float-end"
-                  size="lg"
-                  variant="outline-primary"
-                  onClick={handleShow}
-                >
-                  New Contact
-                </Button>
-              </Col>
-            </Row>
+            <SearchContactsForm onSearch={handleSearch} />
+            <Button className="float-end" size="lg" variant="outline-primary" onClick={handleShow}>
+              New Contact
+            </Button>
           </Container>
         </Navbar>
       </Container>
