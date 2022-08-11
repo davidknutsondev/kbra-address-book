@@ -10,7 +10,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3.  Create a .env file with the REACT_APP_BACKEND_ENDPOINT=yourEndPoint
 4.  Initialize the project `yarn --init`
 5.  Build the project `yarn build`
-6.  Start the server `yarn start`
+6.  Clone and start the backend https://github.com/davidknutsondev/kbra-contacts-server
+7.  Start the server `yarn start`
 
 ## Available Scripts
 
